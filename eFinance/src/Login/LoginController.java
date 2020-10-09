@@ -29,90 +29,60 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package demo.model;
+package Login;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.awt.Color;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
-public class User {
+/**
+ * Login Controller.
+ */
+public class LoginController extends AnchorPane implements Initializable {
 
-    private static final Map<String, User> USERS = new HashMap<String, User>();
+    @FXML
+    TextField userId;
+    @FXML
+    PasswordField password;
+    @FXML
+    Button login;
+    @FXML
+    Label errorMessage;
 
-    public static User of(String id) {
-        User user = USERS.get(id);
-        if (user == null) {
-            user = new User(id);
-            USERS.put(id, user);
+    private Main application;
+    
+    
+    public void setApp(Main application){
+        this.application = application;
+        //Hello
+    }
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        errorMessage.setText("");
+        userId.setPromptText("demo");
+        password.setPromptText("demo");
+        
+    }
+    
+    
+    public void processLogin(ActionEvent event) {
+        if (application == null){
+            // We are running in isolated FXML, possibly in Scene Builder.
+            // NO-OP.
+            errorMessage.setText("Hello " + userId.getText());
+        } else {
+            if (!application.userLogging(userId.getText(), password.getText())){
+                errorMessage.setText("Username/Password is incorrect");
+            }
         }
-        return user;
-    }
-
-    private User(String id) {
-        this.id = id;
-    }
-    private String id;
-
-    public String getId() {
-        return id;
-    }
-    private String email = "";
-    private String phone = "";
-    private boolean subscribed;
-    private String address = "";
-
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * @return the phone
-     */
-    public String getPhone() {
-        return phone;
-    }
-
-    /**
-     * @param phone the phone to set
-     */
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    /**
-     * @return the subscribed
-     */
-    public boolean isSubscribed() {
-        return subscribed;
-    }
-
-    /**
-     * @param subscribed the subscribed to set
-     */
-    public void setSubscribed(boolean subscribed) {
-        this.subscribed = subscribed;
-    }
-
-    /**
-     * @return the address
-     */
-    public String getAddress() {
-        return address;
-    }
-
-    /**
-     * @param address the address to set
-     */
-    public void setAddress(String address) {
-        this.address = address;
     }
 }
