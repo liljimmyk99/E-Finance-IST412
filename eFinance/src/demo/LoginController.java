@@ -62,6 +62,7 @@ public class LoginController extends AnchorPane implements Initializable {
     
     public void setApp(Main application){
         this.application = application;
+        //Hello
     }
     
     @Override
