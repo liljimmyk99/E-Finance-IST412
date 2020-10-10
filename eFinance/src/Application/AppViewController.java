@@ -5,17 +5,33 @@
  */
 package Application;
 
+import Login.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
  *
  * @author jimmykane
  */
-public class AppViewController implements Initializable {
+public class AppViewController extends AnchorPane implements Initializable {
 
+    @FXML private Button logOutButton;
+    
+    private Main application;
+    
+    public void setApp(Main application){
+        this.application = application;
+    }
+    
+    public void logout(ActionEvent e){
+        application.userLogout();
+    }
     /**
      * Initializes the controller class.
      */
