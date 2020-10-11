@@ -5,11 +5,8 @@
  */
 package Records;
 
-<<<<<<< HEAD
 import Application.AppModel;
 import java.util.HashMap;
-=======
->>>>>>> facf91e9d03bcc3254acb4bf5a7f688b8cba5a8c
 import java.util.Map;
 
 /**
