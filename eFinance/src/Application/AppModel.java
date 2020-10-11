@@ -15,14 +15,14 @@ public class AppModel {
     private String phoneNumber;
     private String SSN;
     private double yearlyIncome;
-    private double creditScore;
+    private Integer creditScore;
     private String underGradDegree;
     private boolean currentlyEmployed;
     private boolean married;
     private boolean applicationInProgress;
     private boolean approvedApplication;
     
-    public AppModel(String name, String address, String phoneNumber, String ssn, double yearlyIncome, double creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
+    public AppModel(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -77,11 +77,11 @@ public class AppModel {
         this.yearlyIncome = yearlyIncome;
     }
 
-    public double getCreditScore() {
+    public Integer getCreditScore() {
         return creditScore;
     }
 
-    public void setCreditScore(double creditScore) {
+    public void setCreditScore(Integer creditScore) {
         this.creditScore = creditScore;
     }
 
