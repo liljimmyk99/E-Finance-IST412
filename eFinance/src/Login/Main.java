@@ -34,6 +34,7 @@ package Login;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
+import Application.AppViewController;
 import Login.Authenticator;
 import Login.Authenticator;
 import Login.LoginController;
@@ -88,23 +89,36 @@ public class Main extends Application {
         if (Authenticator.validate(userId, password)) {
             loggedUser = AccountsModel.of(userId);
             //Need a go to somewhere
+            showApplication();
             return true;
         } else {
             return false;
         }
     }
     
-    void userLogout(){
+    public void userLogout(){
         loggedUser = null;
         gotoLogin();
     }
     
+    public void showApplication(){
+        goToApplication();
+    }
     
 
     private void gotoLogin() {
         try {
             LoginController login = (LoginController) replaceSceneContent("login.fxml");
             login.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void goToApplication(){
+        try {
+            AppViewController app = (AppViewController) replaceSceneContent("/Application/AppView.fxml");
+            app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
