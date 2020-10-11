@@ -5,10 +5,14 @@
  */
 package Records;
 
+import java.util.Map;
+
 /**
  *
  * @author jimmykane
  */
+
+
 public class RecordsModel {
     
 }

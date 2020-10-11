@@ -5,6 +5,7 @@
  */
 package Decision;
 
+import Application.AppModel;
 import java.util.HashMap;
 
 /**
@@ -18,14 +19,16 @@ public class DecisionModel {
     private boolean debtAproval;//If true, debt level has been approved and the application can be approved.
     private String name;
     
+    private final AppModel client;
+    
     HashMap<String, String> questionsAndAnswers = new HashMap<String, String>();
     
-    public DecisionModel(){
-        DecisionModel decisionModel = new DecisionModel();
+    public DecisionModel(AppModel client){
+        this.client = client;
+        creditScore = client.getCreditScore();
+        
     }
     
-       //Get application?????-----------------**********
-
     /**
      * @return the creditScore
      */
