@@ -29,7 +29,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package demo;
+package Login;
 
 import java.awt.Color;
 import java.net.URL;
@@ -62,6 +62,7 @@ public class LoginController extends AnchorPane implements Initializable {
     
     public void setApp(Main application){
         this.application = application;
+        //Hello
     }
     
     @Override
