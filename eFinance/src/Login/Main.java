@@ -89,7 +89,7 @@ public class Main extends Application {
         if (Authenticator.validate(userId, password)) {
             loggedUser = AccountsModel.of(userId);
             //Need a go to somewhere
-            showApplication();
+            showNavigation();
             return true;
         } else {
             return false;
@@ -105,6 +105,10 @@ public class Main extends Application {
         goToApplication();
     }
     
+    public void showNavigation(){
+        goToNavigation();
+    }
+    
 
     private void gotoLogin() {
         try {
@@ -118,6 +122,15 @@ public class Main extends Application {
     private void goToApplication(){
         try {
             AppViewController app = (AppViewController) replaceSceneContent("/Application/AppView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void goToNavigation(){
+        try {
+            NavigationController app = (NavigationController) replaceSceneContent("NavigationView.fxml");
             app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

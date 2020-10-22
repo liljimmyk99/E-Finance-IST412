@@ -56,6 +56,8 @@ public class LoginController extends AnchorPane implements Initializable {
     Button login;
     @FXML
     Label errorMessage;
+    
+
 
     private Main application;
     
@@ -71,6 +73,10 @@ public class LoginController extends AnchorPane implements Initializable {
         userId.setPromptText("demo");
         password.setPromptText("demo");
         
+    }
+    
+    public void logout(ActionEvent e){
+        application.userLogout();
     }
     
     
