@@ -29,8 +29,16 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package demo;
+package Login;
 
+import Accounts.AccountsModel;
+import Accounts.AccountsModel;
+import Accounts.AccountsModel;
+import Application.AppViewController;
+import Login.Authenticator;
+import Login.Authenticator;
+import Login.LoginController;
+import Login.LoginController;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,8 +49,6 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import demo.model.User;
-import demo.security.Authenticator;
 
 /**
  * Main Application. This class handles navigation and user session.
@@ -50,7 +56,7 @@ import demo.security.Authenticator;
 public class Main extends Application {
 
     private Stage stage;
-    private User loggedUser;
+    private AccountsModel loggedUser;
     private final double MINIMUM_WINDOW_WIDTH = 390.0;
     private final double MINIMUM_WINDOW_HEIGHT = 500.0;
 
@@ -75,38 +81,57 @@ public class Main extends Application {
         }
     }
 
-    public User getLoggedUser() {
+    public AccountsModel getLoggedUser() {
         return loggedUser;
     }
         
     public boolean userLogging(String userId, String password){
         if (Authenticator.validate(userId, password)) {
-            loggedUser = User.of(userId);
-            gotoProfile();
+            loggedUser = AccountsModel.of(userId);
+            //Need a go to somewhere
+            showNavigation();
             return true;
         } else {
             return false;
         }
     }
     
-    void userLogout(){
+    public void userLogout(){
         loggedUser = null;
         gotoLogin();
     }
     
-    private void gotoProfile() {
-        try {
-            ProfileController profile = (ProfileController) replaceSceneContent("profile.fxml");
-            profile.setApp(this);
-        } catch (Exception ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    public void showApplication(){
+        goToApplication();
     }
+    
+    public void showNavigation(){
+        goToNavigation();
+    }
+    
 
     private void gotoLogin() {
         try {
             LoginController login = (LoginController) replaceSceneContent("login.fxml");
             login.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void goToApplication(){
+        try {
+            AppViewController app = (AppViewController) replaceSceneContent("/Application/AppView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void goToNavigation(){
+        try {
+            NavigationController app = (NavigationController) replaceSceneContent("NavigationView.fxml");
+            app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
