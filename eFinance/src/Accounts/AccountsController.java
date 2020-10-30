@@ -41,12 +41,19 @@ public class AccountsController implements Initializable {
         application.userLogout();
     }
 
-    public void createAccount(String id, String email, String Status){
-        if(AccountsModel.getUsers().containsKey(id)){
+    public void createCustomerAccount(String id, String email){
+        if(CustomerModel.getUsers().containsKey(id)){
             System.out.println("A user with this id already exists");
         }else{
-            AccountsModel.of(id).setEmail(email);
-            AccountsModel.of(id).setStatus(Status); 
+            CustomerModel.of(id).setEmail(email);
         }    
-    }    
+    }
+
+    public void createEmployeeAccount(String id, String email){
+            if(EmployeeModel.getUsers().containsKey(id)){
+                System.out.println("A user with this id already exists");
+            }else{
+                CustomerModel.of(id).setEmail(email);
+            }    
+    }     
 }
