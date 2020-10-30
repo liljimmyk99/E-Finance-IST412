@@ -16,7 +16,11 @@ import java.util.Map;
  */
 public class CustomerModel extends AccountsModel {
 
-    //User Attributes
+   /*
+    *
+    * User Attributes
+    *
+    */
     private int creditScore;
     private Date dateOfBirth;
     private int SSN;
@@ -30,8 +34,10 @@ public class CustomerModel extends AccountsModel {
     private Double totalAssetsValue;
     private String franchiseLocation;
     
+    //Map of Available Users
     private static final Map<String, CustomerModel> USERS = new HashMap<String, CustomerModel>();
     
+    //Gets & creates Specific User Element
     public static CustomerModel of(String id) {
         CustomerModel user = USERS.get(id);
         if (user == null) {
@@ -40,6 +46,22 @@ public class CustomerModel extends AccountsModel {
         }
         return user;
     }
+    
+    /*
+    *
+    * To String
+    *
+    */
+    @Override
+    public String toString() {
+        return "Name: " + super.name + "ID: " + super.id; //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    /*
+    *
+    * Constructors
+    *
+    */
     public CustomerModel(String id){
         this.id = id;
     }
@@ -53,10 +75,111 @@ public class CustomerModel extends AccountsModel {
         return USERS;
     }
     
-    
-    @Override
-    public String toString() {
-        return "Name: " + super.name + "ID: " + super.id; //To change body of generated methods, choose Tools | Templates.
+    /*
+    *
+    * Getters and Setter for Attributes
+    *
+    */
+
+    public int getCreditScore() {
+        return creditScore;
     }
+
+    public void setCreditScore(int creditScore) {
+        this.creditScore = creditScore;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public int getSSN() {
+        return SSN;
+    }
+
+    public void setSSN(int SSN) {
+        this.SSN = SSN;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public ArrayList<String> getNickNames() {
+        return NickNames;
+    }
+
+    public void setNickNames(ArrayList<String> NickNames) {
+        this.NickNames = NickNames;
+    }
+
+    public String getRace() {
+        return race;
+    }
+
+    public void setRace(String race) {
+        this.race = race;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Boolean getUSCitizen() {
+        return USCitizen;
+    }
+
+    public void setUSCitizen(Boolean USCitizen) {
+        this.USCitizen = USCitizen;
+    }
+
+    public String getRelationshipStatus() {
+        return relationshipStatus;
+    }
+
+    public void setRelationshipStatus(String relationshipStatus) {
+        this.relationshipStatus = relationshipStatus;
+    }
+
+    public Double getAverageYearlyIncome() {
+        return averageYearlyIncome;
+    }
+
+    public void setAverageYearlyIncome(Double averageYearlyIncome) {
+        this.averageYearlyIncome = averageYearlyIncome;
+    }
+
+    public Double getTotalAssetsValue() {
+        return totalAssetsValue;
+    }
+
+    public void setTotalAssetsValue(Double totalAssetsValue) {
+        this.totalAssetsValue = totalAssetsValue;
+    }
+
+    public String getFranchiseLocation() {
+        return franchiseLocation;
+    }
+
+    public void setFranchiseLocation(String franchiseLocation) {
+        this.franchiseLocation = franchiseLocation;
+    }
+    
+    
+    
+    
+    
     
 }
