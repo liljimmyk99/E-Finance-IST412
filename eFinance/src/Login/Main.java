@@ -35,6 +35,7 @@ import Accounts.AccountsModel;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
 import Accounts.CustomerModel;
+import Accounts.EmployeeModel;
 import Application.AppViewController;
 import Login.Authenticator;
 import Login.Authenticator;
@@ -86,9 +87,22 @@ public class Main extends Application {
         return loggedUser;
     }
         
-    public boolean userLogging(String userId, String password){
+    public boolean customerLogging(String userId, String password){
+        System.out.println("CustomerLogging Method Activated");
         if (Authenticator.validate(userId, password)) {
             loggedUser = CustomerModel.of(userId);
+            //Need a go to somewhere
+            showNavigation();
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public boolean employeeLogging(String userId, String password){
+        System.out.println("EmployeeLogging Method Activated");
+        if (Authenticator.validate(userId, password)) {
+            loggedUser = EmployeeModel.of(userId);
             //Need a go to somewhere
             showNavigation();
             return true;
