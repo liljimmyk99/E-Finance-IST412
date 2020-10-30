@@ -34,6 +34,7 @@ package Login;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
+import Accounts.CustomerModel;
 import Application.AppViewController;
 import Login.Authenticator;
 import Login.Authenticator;
@@ -71,7 +72,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             stage = primaryStage;
-            stage.setTitle("FXML Login Sample");
+            stage.setTitle("E-Finance");
             stage.setMinWidth(MINIMUM_WINDOW_WIDTH);
             stage.setMinHeight(MINIMUM_WINDOW_HEIGHT);
             gotoLogin();
@@ -87,7 +88,7 @@ public class Main extends Application {
         
     public boolean userLogging(String userId, String password){
         if (Authenticator.validate(userId, password)) {
-            loggedUser = AccountsModel.of(userId);
+            loggedUser = CustomerModel.of(userId);
             //Need a go to somewhere
             showNavigation();
             return true;

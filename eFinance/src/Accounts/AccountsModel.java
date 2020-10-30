@@ -13,36 +13,32 @@ import java.util.Map;
  * @author Alex Clapper
  */
 
-public class AccountsModel {
-
-    private static final Map<String, AccountsModel> USERS = new HashMap<String, AccountsModel>();
-
-    public static AccountsModel of(String id) {
-        AccountsModel user = USERS.get(id);
-        if (user == null) {
-            user = new AccountsModel(id);
-            USERS.put(id, user);
-        }
-        return user;
-    }
-
-    private AccountsModel(String id) {
-        this.id = id;
-    }
+public abstract class AccountsModel {
+     protected String id;
+     protected String name;
+     protected String email = "No email on File";
+    //Put this in the Customer Class.....
+    //private String franchiseLocation = "State College";
     
-    private String id;
+    //private static final Map<String, AccountsModel> USERS = new HashMap<String, AccountsModel>();
 
+//    public static AccountsModel of(String id) {
+//        AccountsModel user = USERS.get(id);
+//        if (user == null) {
+//            user = new AccountsModel(id);
+//            USERS.put(id, user);
+//        }
+//        return user;
+//    }
+    
     public String getId() {
         return id;
     }
     
-    public static Map<String, AccountsModel> getUsers(){
-        return USERS;
-    }
     
-    private String email = "No email on File";
-    private String status = "Status not assigned";
-    
+//    public static Map<String, AccountsModel> getUsers(){
+//        return USERS;
+//    }
     /**
      * @return the email
      */
@@ -56,28 +52,6 @@ public class AccountsModel {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    /**
-     * @return the status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    /**
-     * @param status the status to set
-     */
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
-    @Override
-    public String toString(){
-        return "[" + id + ", " + email + ", " + status + "]";
-    }
-
-
-
-
-
+ 
+    public abstract String toString();
 }
