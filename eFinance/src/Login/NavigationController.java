@@ -51,7 +51,7 @@ public class NavigationController extends AnchorPane implements Initializable {
     }
     
     public void useCaseOne(ActionEvent e){
-        //application.useCaseOne();
+        application.showApplication();
     }
     
     public void useCaseTwo(ActionEvent e){

@@ -12,10 +12,10 @@
             <Font size="37.0" />
          </font>
       </Label>
-      <Button fx:id="useCaseOneButton" layoutX="124.0" layoutY="173.0" mnemonicParsing="false" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 1" />
-      <Button fx:id="useCaseTwoButton" layoutX="396.0" layoutY="173.0" mnemonicParsing="false" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 2" />
-      <Button fx:id="useCaseThreeButton" layoutX="124.0" layoutY="269.0" mnemonicParsing="false" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 3" />
-      <Button fx:id="useCaseFourButton" layoutX="396.0" layoutY="269.0" mnemonicParsing="false" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 4" />
+      <Button fx:id="useCaseOneButton" layoutX="124.0" layoutY="173.0" mnemonicParsing="false" onAction="#useCaseOne" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 1" />
+      <Button fx:id="useCaseTwoButton" layoutX="396.0" layoutY="173.0" mnemonicParsing="false" onAction="#useCaseTwo" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 2" />
+      <Button fx:id="useCaseThreeButton" layoutX="124.0" layoutY="269.0" mnemonicParsing="false" onAction="#useCaseThree" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 3" />
+      <Button fx:id="useCaseFourButton" layoutX="396.0" layoutY="269.0" mnemonicParsing="false" onAction="#useCaseFour" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 4" />
       <Button fx:id="logoutButton" layoutX="264.0" layoutY="219.0" mnemonicParsing="false" onAction="#logout" styleClass="Button" text="LOG OUT" />
    </children>
 </AnchorPane>
