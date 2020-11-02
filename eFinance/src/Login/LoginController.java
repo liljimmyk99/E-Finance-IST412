@@ -56,6 +56,10 @@ public class LoginController extends AnchorPane implements Initializable {
     Button login;
     @FXML
     Label errorMessage;
+    
+    //Input Prompt Joe G
+    @FXML
+    private Label inputPrompt;
 
     private Main application;
     
