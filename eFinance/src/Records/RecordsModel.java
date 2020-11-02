@@ -19,9 +19,17 @@ public class RecordsModel {
     private Map<String, Application.AppModel> apps = new HashMap<String, Application.AppModel>();
     private Map<String, String> paymentHistory = new HashMap<String, String>();
     
-    public RecordsModel(){
-        
+    private static RecordsModel recordsModel = null;//JOE G SINGLETON
+    
+    private RecordsModel(){}
+    
+    public static RecordsModel getRecordsModel(){
+        if(recordsModel == null){
+            recordsModel = new RecordsModel();
+        }
+        return recordsModel;
     }
+    
     
     public RecordsModel(Map<String, Application.AppModel> apps, Map<String, String> paymentHistory){
         this.apps = apps;

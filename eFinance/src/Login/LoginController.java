@@ -60,6 +60,8 @@ public class LoginController extends AnchorPane implements Initializable {
     @FXML
     CheckBox employeeCheckbox;
     
+    @FXML
+    private Label inputPrompt;//Joeg input prompt
 
 
     private Main application;
