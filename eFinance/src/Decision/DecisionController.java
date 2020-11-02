@@ -50,4 +50,8 @@ public class DecisionController implements Initializable {
     public void denyApplication(ActionEvent e){
         userApplication.setApprovedApplication(false);
     }
+    
+    public void setApplication(AppModel userApplication){
+        this.userApplication = userApplication;
+    }
 }

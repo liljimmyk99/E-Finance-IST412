@@ -49,10 +49,17 @@ public class AppViewController extends AnchorPane implements Initializable {
         application.userLogout();
     }
 
-    public AppModel GetCurrentApplication(AccountsModel user){
+    public void createApplication(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
+        loanApplication = new AppModel(name, address, phoneNumber, ssn, yearlyIncome, creditScore, underGradDegree,currentlyEmployed, married);
+    }
+    
+    public void createApplication(){
+        loanApplication = new AppModel();
+    }
+    
+    public AppModel GetCurrentApplication(){
         //Looks up User in the Application Model
-        AppModel example = new AppModel();
-        return example;
+        return loanApplication;
     }
 
     public void SubmitApplication(ActionEvent e){
