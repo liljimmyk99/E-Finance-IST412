@@ -9,7 +9,7 @@ package Application;
  *
  * @author jimmykane
  */
-public class AppModel {
+public class PersonalApplication {
     private String name;
     private String address;
     private String phoneNumber;
@@ -22,7 +22,7 @@ public class AppModel {
     private boolean applicationInProgress;
     private boolean approvedApplication;
     
-    public AppModel(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
+    public PersonalApplication(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -35,7 +35,7 @@ public class AppModel {
         this.applicationInProgress = true;
     }
     
-    public AppModel(){}
+    public PersonalApplication(){}
 
     public String getName() {
         return name;
