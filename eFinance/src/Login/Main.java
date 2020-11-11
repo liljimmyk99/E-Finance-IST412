@@ -36,7 +36,10 @@ import Accounts.AccountsModel;
 import Accounts.AccountsModel;
 import Accounts.CustomerModel;
 import Accounts.EmployeeModel;
-import Application.AppViewController;
+import Application.ApplicationTypeSelectionViewController;
+import Application.BuisnessAppViewController;
+import Application.OtherAppViewController;
+import Application.PersonalAppViewController;
 import Login.Authenticator;
 import Login.Authenticator;
 import Login.LoginController;
@@ -117,11 +120,21 @@ public class Main extends Application {
     }
     
     public void showApplication(){
-        goToApplication();
+        goToApplicationSelection();
     }
     
     public void showNavigation(){
         goToNavigation();
+    }
+    
+    public void showPersonalLoanApplication(){
+        goToPersonalLoan();
+    }
+    public void showBuisnessLoanApplication(){
+        goToBuisnessLoan();
+    }
+    public void showOtherLoanApplication(){
+        goToOtherLoan();
     }
     
 
@@ -134,9 +147,9 @@ public class Main extends Application {
         }
     }
     
-    private void goToApplication(){
+    private void goToApplicationSelection(){
         try {
-            AppViewController app = (AppViewController) replaceSceneContent("/Application/PersonalAppView.fxml");
+            ApplicationTypeSelectionViewController app = (ApplicationTypeSelectionViewController) replaceSceneContent("/Application/ApplicationTypeSelectionView.fxml");
             app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -146,6 +159,32 @@ public class Main extends Application {
     public void goToNavigation(){
         try {
             NavigationController app = (NavigationController) replaceSceneContent("NavigationView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void goToPersonalLoan(){
+        try {
+            PersonalAppViewController app = (PersonalAppViewController) replaceSceneContent("/Application/PersonalAppView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void goToBuisnessLoan(){
+        try {
+            BuisnessAppViewController app = (BuisnessAppViewController) replaceSceneContent("/Application/BuisnessAppView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void goToOtherLoan(){
+        try {
+            OtherAppViewController app = (OtherAppViewController) replaceSceneContent("/Application/OtherAppView.fxml");
             app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.ApplicationTypeSelectionViewController">
+   <children>
+      <Label layoutX="54.0" layoutY="31.0" text="Please Selecte the Type of Loan you'd like to apply for">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="PersonalButton" layoutX="235.0" layoutY="115.0" mnemonicParsing="false" onAction="#createPersonalLoan" text="Personal " textFill="#d00808">
+         <font>
+            <Font name="System Font" size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="BuisnessButton" layoutX="235.0" layoutY="151.0" mnemonicParsing="false" onAction="#createBuisnessLoan" text="Buisness" textFill="#d00808">
+         <font>
+            <Font name="System Font" size="23.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="OtherButton" layoutX="235.0" layoutY="189.0" mnemonicParsing="false" onAction="#createOtherLoan" text="Other" textFill="#d00808">
+         <font>
+            <Font name="System Font" size="23.0" />
+         </font>
+      </RadioButton>
+   </children>
+</AnchorPane>

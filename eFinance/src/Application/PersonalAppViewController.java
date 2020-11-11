@@ -22,7 +22,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author jimmykane
  */
-public class AppViewController extends AnchorPane implements Initializable {
+public class PersonalAppViewController extends AnchorPane implements Initializable {
 
     @FXML private Button logOutButton;
     @FXML private Button backButton;

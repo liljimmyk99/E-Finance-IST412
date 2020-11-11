@@ -5,7 +5,7 @@
  */
 package Testharness;
 
-import Application.AppViewController;
+import Application.PersonalAppViewController;
 import Decision.DecisionController;
 import Login.Authenticator;
 import Login.LoginController;
@@ -28,7 +28,7 @@ public class Testharness {
             System.out.println("Invalid Login: Test Failed");
         }
         
-        AppViewController AppViewCntl = new AppViewController();
+        PersonalAppViewController AppViewCntl = new PersonalAppViewController();
         AppViewCntl.createApplication("Alex", "State College", "717-476-4425", "555-55-5555", 10000.00, 750, "UnderWater Basket Weaving", true, false);
         System.out.println("Expected Result: Alex; Actual Result:" + AppViewCntl.GetCurrentApplication().getName());
         
