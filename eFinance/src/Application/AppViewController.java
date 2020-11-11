@@ -13,6 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -23,6 +25,13 @@ import javafx.scene.layout.AnchorPane;
 public class AppViewController extends AnchorPane implements Initializable {
 
     @FXML private Button logOutButton;
+    @FXML private Button backButton;
+    @FXML private TextField nameTextField;
+    @FXML private TextField ssnTextField;
+    @FXML private TextField emailTextField;
+    @FXML private TextField creditScoreTextField;
+    @FXML private DatePicker DateOfBirthField;
+    
     
     private Main application;
     
@@ -47,6 +56,10 @@ public class AppViewController extends AnchorPane implements Initializable {
     //Takes the user back to the log in page
     public void logout(ActionEvent e){
         application.userLogout();
+    }
+    
+    public void backToNavigation(ActionEvent e){
+        application.showNavigation();
     }
 
     public void createApplication(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){

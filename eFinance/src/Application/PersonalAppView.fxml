@@ -15,7 +15,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="logOutButton" layoutX="32.0" layoutY="45.0" mnemonicParsing="false" onAction="#logout" prefHeight="28.0" prefWidth="80.0" text="Log Out">
+      <Button fx:id="logOutButton" layoutX="501.0" layoutY="45.0" mnemonicParsing="false" onAction="#logout" prefHeight="28.0" prefWidth="80.0" text="Log Out">
          <font>
             <Font size="14.0" />
          </font>
@@ -32,12 +32,13 @@
                   <Label layoutX="51.0" layoutY="267.0" prefHeight="17.0" prefWidth="231.0" text="Please select your gender?" />
                   <TextField fx:id="nameTextField" layoutX="51.0" layoutY="31.0" />
                   <TextField fx:id="emailTextField" layoutX="51.0" layoutY="87.0" />
-                  <DatePicker layoutX="52.0" layoutY="131.0" prefHeight="27.0" prefWidth="174.0" />
+                  <DatePicker fx:id="DateOfBirthField" layoutX="52.0" layoutY="131.0" prefHeight="27.0" prefWidth="174.0" />
                   <TextField fx:id="creditScoreTextField" layoutX="51.0" layoutY="193.0" />
                   <TextField fx:id="ssnTextField" layoutX="51.0" layoutY="239.0" />
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
+      <Button fx:id="backButton" layoutX="19.0" layoutY="46.0" mnemonicParsing="false" onAction="#backToNavigation" prefHeight="27.0" prefWidth="80.0" text="Back" />
    </children>
 </AnchorPane>

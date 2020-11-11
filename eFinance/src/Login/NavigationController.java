@@ -23,7 +23,7 @@ public class NavigationController extends AnchorPane implements Initializable {
     private Main application;
     
     @FXML
-    Button useCaseOneButton;
+    Button ApplicationButton;
     @FXML
     Button useCaseTwoButton;
     @FXML
@@ -50,7 +50,7 @@ public class NavigationController extends AnchorPane implements Initializable {
         application.userLogout();
     }
     
-    public void useCaseOne(ActionEvent e){
+    public void showApplicationSelection(ActionEvent e){
         application.showApplication();
     }
     

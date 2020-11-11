@@ -136,7 +136,7 @@ public class Main extends Application {
     
     private void goToApplication(){
         try {
-            AppViewController app = (AppViewController) replaceSceneContent("/Application/AppView.fxml");
+            AppViewController app = (AppViewController) replaceSceneContent("/Application/PersonalAppView.fxml");
             app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
