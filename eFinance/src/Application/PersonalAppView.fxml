@@ -34,7 +34,7 @@
                   <Label layoutX="51.0" layoutY="267.0" prefHeight="17.0" prefWidth="231.0" text="Please select your gender?" />
                   <TextField fx:id="nameTextField" layoutX="51.0" layoutY="31.0" promptText="Joe Shoe" />
                   <TextField fx:id="emailTextField" layoutX="51.0" layoutY="87.0" promptText="johnappleseed@123movies.com" />
-                  <DatePicker fx:id="DateOfBirthField" layoutX="52.0" layoutY="131.0" prefHeight="27.0" prefWidth="157.0" promptText="08/15/1999" />
+                  <DatePicker fx:id="dateOfBirthField" layoutX="52.0" layoutY="131.0" prefHeight="27.0" prefWidth="157.0" promptText="08/15/1999" />
                   <TextField fx:id="creditScoreTextField" layoutX="51.0" layoutY="193.0" promptText="730" />
                   <TextField fx:id="ssnTextField" layoutX="51.0" layoutY="239.0" promptText="123-45-9012" />
                   <CheckBox fx:id="maleCheckBox" layoutX="52.0" layoutY="294.0" mnemonicParsing="false" text="Male" />

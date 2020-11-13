@@ -28,18 +28,28 @@ import javafx.scene.layout.AnchorPane;
  */
 public class PersonalAppViewController extends AnchorPane implements Initializable {
 
+    //CheckBox Options
     ObservableList<String> maritalStatusList = FXCollections.observableArrayList("Single", "Married", "Divorced");
+    ObservableList<String> educationStatusList = FXCollections.observableArrayList("Some High School", "High School Diploma", "Some Trade School", "Trade Certificate", "Some College", "Associates Degree", "Bachalors Degree", "Master's Degree");
     
+    //Buttons
     @FXML private Button logOutButton;
     @FXML private Button backButton;
+    @FXML private Button submitButton;
+    
+    //User Input Fields
     @FXML private TextField nameTextField;
     @FXML private TextField ssnTextField;
     @FXML private TextField emailTextField;
     @FXML private TextField creditScoreTextField;
-    @FXML private DatePicker DateOfBirthField;
+    @FXML private DatePicker dateOfBirthField;
     @FXML private CheckBox maleCheckBox;
     @FXML private CheckBox femaleCheckBox;
     @FXML private ChoiceBox relationshipStatusField;
+    @FXML private ChoiceBox educationStatusField;
+    @FXML private TextField incomeField;
+    @FXML private CheckBox agreeCheckBox;
+    @FXML private CheckBox disagreeCheckBox;
     
     
     
@@ -55,6 +65,7 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         relationshipStatusField.setItems(maritalStatusList);
+        educationStatusField.setItems(educationStatusList);
     }
     
     //Gets the Application Object so this class can call the main method functions and get user information
@@ -99,16 +110,47 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
         //user.SaveApplication(this.currentApplication
     }
     
-    public void GetHelp(ActionEvent e) {
-        //Call Representative
-        
-        //Email Representative
-    }
-    
     //Validate User Input
-    public boolean checkInputs(ActionEvent e){
+    public boolean checkEmptyInputs(ActionEvent e){
+        System.out.println("checkEmptyInputs method activated");
+        //Ensure Fields are not Empty
+        if (nameTextField.getText() == ""){
+            System.out.println("nameTextField is empty");
+            return false;
+        } else if (emailTextField.getText() == ""){
+             System.out.println("emailTextField is empty");
+            return false;
+        } else if (dateOfBirthField.getValue() == null){
+             System.out.println("dateOfBirthField is empty");
+            return false;
+        } else if (creditScoreTextField.getText() == ""){
+             System.out.println("creditScoreTextField is empty");
+            return false;
+        } else if (ssnTextField.getText() == ""){
+             System.out.println("ssnTextField is empty");
+            return false;
+        } else if (relationshipStatusField.getValue() == null){
+             System.out.println("relationshipStatusField is empty");
+            return false;
+        } else if (educationStatusField.getValue() == null){
+             System.out.println("educationStatusField is empty");
+            return false;
+        } else if (incomeField.getText() == ""){
+             System.out.println("incomeField is empty");
+            return false;
+        }
+       
+        //Ensure only 1 Checkbox if checked
+        if(maleCheckBox.selectedProperty() == femaleCheckBox.selectedProperty()){
+            System.out.println("Both maleCheckBox and femaleCheckBox are selected");
+            return false;
+        } else if(agreeCheckBox.selectedProperty() == disagreeCheckBox.selectedProperty()){
+            System.out.println("Both agreeCheckBox and disagreeCheckBox are selected");
+            return false;
+        }
         
-        return false;
+        //If this far, all attributes are filled out
+        return true;
     }
     
 }
