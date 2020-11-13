@@ -29,7 +29,8 @@ public class OtherAppViewController extends AnchorPane implements Initializable 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    } 
+    
     public void setApp(Main application){
         this.application = application;
         currentUser = application.getLoggedUser();

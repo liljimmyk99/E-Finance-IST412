@@ -9,7 +9,7 @@ package Application;
  *
  * @author jimmykane
  */
-public class AppModel {
+public abstract class AppModel {
     private String name;
     private String address;
     private String phoneNumber;
@@ -124,6 +124,8 @@ public class AppModel {
     public void setApprovedApplication(boolean approvedApplication) {
         this.approvedApplication = approvedApplication;
     }
+    
+    public abstract String getApplicationType();
 }
 
     

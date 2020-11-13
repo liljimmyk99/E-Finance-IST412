@@ -9,10 +9,14 @@ import Accounts.AccountsModel;
 import Login.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -24,6 +28,8 @@ import javafx.scene.layout.AnchorPane;
  */
 public class PersonalAppViewController extends AnchorPane implements Initializable {
 
+    ObservableList<String> maritalStatusList = FXCollections.observableArrayList("Single", "Married", "Divorced");
+    
     @FXML private Button logOutButton;
     @FXML private Button backButton;
     @FXML private TextField nameTextField;
@@ -31,6 +37,10 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     @FXML private TextField emailTextField;
     @FXML private TextField creditScoreTextField;
     @FXML private DatePicker DateOfBirthField;
+    @FXML private CheckBox maleCheckBox;
+    @FXML private CheckBox femaleCheckBox;
+    @FXML private ChoiceBox relationshipStatusField;
+    
     
     
     private Main application;
@@ -44,7 +54,7 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        relationshipStatusField.setItems(maritalStatusList);
     }
     
     //Gets the Application Object so this class can call the main method functions and get user information
@@ -63,11 +73,11 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     }
 
     public void createApplication(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
-        loanApplication = new AppModel(name, address, phoneNumber, ssn, yearlyIncome, creditScore, underGradDegree,currentlyEmployed, married);
+        loanApplication = new PersonalApplication(name, address, phoneNumber, ssn, yearlyIncome, creditScore, underGradDegree,currentlyEmployed, married);
     }
     
     public void createApplication(){
-        loanApplication = new AppModel();
+        loanApplication = new PersonalApplication();
     }
     
     public AppModel GetCurrentApplication(){
@@ -93,6 +103,12 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
         //Call Representative
         
         //Email Representative
+    }
+    
+    //Validate User Input
+    public boolean checkInputs(ActionEvent e){
+        
+        return false;
     }
     
 }

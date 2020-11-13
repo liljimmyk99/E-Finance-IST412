@@ -9,19 +9,19 @@ package Application;
  *
  * @author jimmykane
  */
-public class BuisnessApplication extends AppModel {
+public class OtherApplicationModel extends AppModel{
 
-    
-    public BuisnessApplication(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
+    public OtherApplicationModel(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married) {
         //Calls AppModel Constructor
         super(name, address, phoneNumber, ssn, yearlyIncome, creditScore, underGradDegree, currentlyEmployed, married);
     }
-    
-    public BuisnessApplication(){}
 
-    public String getApplicationType(){
-        return "Business";
+    public OtherApplicationModel() {
     }
-}
 
+    @Override
+    public String getApplicationType() {
+        return "Other";
+    }
     
+}
