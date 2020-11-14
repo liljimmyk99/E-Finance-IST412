@@ -53,8 +53,6 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     @FXML private TextField incomeField;
     @FXML private ChoiceBox approvalField;
     
-    
-    
     private Main application;
     
     //Gets Access to the LoggedUsers fields and methods

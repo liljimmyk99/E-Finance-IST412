@@ -9,14 +9,14 @@ package Application;
  *
  * @author jimmykane
  */
-public class OtherApplicationModel extends AppModel{
+public class OtherApplication extends AppModel{
 
-    public OtherApplicationModel(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married) {
+    public OtherApplication(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married) {
         //Calls AppModel Constructor
         super(name, address, phoneNumber, ssn, yearlyIncome, creditScore, underGradDegree, currentlyEmployed, married);
     }
 
-    public OtherApplicationModel() {
+    public OtherApplication() {
     }
 
     @Override
