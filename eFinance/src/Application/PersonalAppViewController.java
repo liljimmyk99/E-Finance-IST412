@@ -7,6 +7,7 @@ package Application;
 
 import Accounts.AccountsModel;
 import Login.Main;
+import com.sun.org.apache.xalan.internal.xsltc.compiler.util.StringStack;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -31,7 +32,8 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     //CheckBox Options
     ObservableList<String> maritalStatusList = FXCollections.observableArrayList("Single", "Married", "Divorced");
     ObservableList<String> educationStatusList = FXCollections.observableArrayList("Some High School", "High School Diploma", "Some Trade School", "Trade Certificate", "Some College", "Associates Degree", "Bachalors Degree", "Master's Degree");
-    
+    ObservableList<String> genderList = FXCollections.observableArrayList("Male", "Female");
+    ObservableList<String> approvalOptionList = FXCollections.observableArrayList("Agree", "Disagree");
     //Buttons
     @FXML private Button logOutButton;
     @FXML private Button backButton;
@@ -41,15 +43,15 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     @FXML private TextField nameTextField;
     @FXML private TextField ssnTextField;
     @FXML private TextField emailTextField;
+    @FXML private TextField phoneNumberField;
+    @FXML private TextField addressField;
     @FXML private TextField creditScoreTextField;
     @FXML private DatePicker dateOfBirthField;
-    @FXML private CheckBox maleCheckBox;
-    @FXML private CheckBox femaleCheckBox;
+    @FXML private ChoiceBox genderSelectionField;
     @FXML private ChoiceBox relationshipStatusField;
     @FXML private ChoiceBox educationStatusField;
     @FXML private TextField incomeField;
-    @FXML private CheckBox agreeCheckBox;
-    @FXML private CheckBox disagreeCheckBox;
+    @FXML private ChoiceBox approvalField;
     
     
     
@@ -66,6 +68,8 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     public void initialize(URL url, ResourceBundle rb) {
         relationshipStatusField.setItems(maritalStatusList);
         educationStatusField.setItems(educationStatusList);
+        genderSelectionField.setItems(genderList);
+        approvalField.setItems(approvalOptionList);
     }
     
     //Gets the Application Object so this class can call the main method functions and get user information
@@ -97,55 +101,68 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
     }
 
     public void SubmitApplication(ActionEvent e){
-        AccountsModel user = application.getLoggedUser();
+        //Check that Inputs are not Empty
+        if (checkEmptyInputs()){
+            System.out.println("Application is Free From Errors");
+        }
+        
+        //Check that Inputs are formatted Correctly
+        
+        //Create New Application
+        createApplication(nameTextField.getText(), "Some Address", "Some Phone Number", ssnTextField.getText(), Double.parseDouble(incomeField.getText()), Integer.parseInt(creditScoreTextField.getText()), educationStatusField.getValue().toString(), true, false);
+       
+        
         //Adds Application to the User
-        loanApplication.setApplicationInProgress(false);
         //user.SubmitApplication()
     }
     
-    public void SaveApplication(ActionEvent e){
-        AccountsModel user = application.getLoggedUser();
-        //Adds Application to the User with an notfinished Flag
-        loanApplication.setApplicationInProgress(true);
-        //user.SaveApplication(this.currentApplication
-    }
-    
     //Validate User Input
-    public boolean checkEmptyInputs(ActionEvent e){
+    public boolean checkEmptyInputs(){
         System.out.println("checkEmptyInputs method activated");
-        //Ensure Fields are not Empty
-        if (nameTextField.getText() == ""){
+        //Print out Field Values
+        System.out.println("Name: |" + nameTextField.getText() + "|");
+        System.out.println("Email: " + emailTextField.getText());
+        System.out.println("Date of Birth: " + dateOfBirthField.getValue());
+        System.out.println("Credit Score: " + creditScoreTextField.getText());
+        System.out.println("SSN: " + ssnTextField.getText());
+        System.out.println("Gender: " + genderSelectionField.getValue());
+        System.out.println("Relationship Status: " + relationshipStatusField.getValue());
+        System.out.println("Education Status " + educationStatusField.getValue());
+        System.out.println("Income: " + incomeField.getText());
+        System.out.println("Approval: " + approvalField.getValue());
+
+//Ensure Fields are not Empty
+        if (nameTextField.getText().equals("")){
             System.out.println("nameTextField is empty");
             return false;
-        } else if (emailTextField.getText() == ""){
+        } else if (emailTextField.getText().equals("")){
              System.out.println("emailTextField is empty");
             return false;
-        } else if (dateOfBirthField.getValue() == null){
+        } else if (phoneNumberField.getText().equals("")){
+            System.out.println("phoneNumberField is empty");
+        } else if (addressNumberField)
+        else if (dateOfBirthField.getValue() == null){
              System.out.println("dateOfBirthField is empty");
             return false;
-        } else if (creditScoreTextField.getText() == ""){
+        } else if (creditScoreTextField.getText().equals("")){
              System.out.println("creditScoreTextField is empty");
             return false;
-        } else if (ssnTextField.getText() == ""){
+        } else if (ssnTextField.getText().equals("")){
              System.out.println("ssnTextField is empty");
             return false;
+        } else if (genderSelectionField.getValue() ==""){
+            System.out.println("genderSelectionField is empty");
         } else if (relationshipStatusField.getValue() == null){
              System.out.println("relationshipStatusField is empty");
             return false;
         } else if (educationStatusField.getValue() == null){
              System.out.println("educationStatusField is empty");
             return false;
-        } else if (incomeField.getText() == ""){
+        } else if (incomeField.getText().equals("")){
              System.out.println("incomeField is empty");
             return false;
-        }
-       
-        //Ensure only 1 Checkbox if checked
-        if(maleCheckBox.selectedProperty() == femaleCheckBox.selectedProperty()){
-            System.out.println("Both maleCheckBox and femaleCheckBox are selected");
-            return false;
-        } else if(agreeCheckBox.selectedProperty() == disagreeCheckBox.selectedProperty()){
-            System.out.println("Both agreeCheckBox and disagreeCheckBox are selected");
+        } else if (approvalField.getValue() == ""){
+            System.out.println("approvalField is empty");
             return false;
         }
         
