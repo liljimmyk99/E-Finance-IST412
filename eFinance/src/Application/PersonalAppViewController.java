@@ -140,8 +140,11 @@ public class PersonalAppViewController extends AnchorPane implements Initializab
             return false;
         } else if (phoneNumberField.getText().equals("")){
             System.out.println("phoneNumberField is empty");
-        } else if (addressNumberField)
-        else if (dateOfBirthField.getValue() == null){
+            return false;
+        } else if (addressField.getText().equals("")){
+            System.out.println("addressField is empty");
+            return false;
+        }else if (dateOfBirthField.getValue() == null){
              System.out.println("dateOfBirthField is empty");
             return false;
         } else if (creditScoreTextField.getText().equals("")){
