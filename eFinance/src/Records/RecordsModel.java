@@ -16,8 +16,8 @@ import java.util.Map;
 
 
 public class RecordsModel {
-    private Map<String, Application.AppModel> apps = new HashMap<String, Application.AppModel>();
-    private Map<String, String> paymentHistory = new HashMap<String, String>();
+    private static Map<String, Application.AppModel> apps = new HashMap<String, Application.AppModel>();
+    private static Map<String, String> paymentHistory = new HashMap<String, String>();
     
     private static RecordsModel recordsModel = null;//JOE G SINGLETON
     
@@ -50,6 +50,10 @@ public class RecordsModel {
 
     public void setPaymentHistory(Map<String, String> paymentHistory) {
         this.paymentHistory = paymentHistory;
+    }
+    
+    public void addApplication(String key, AppModel newApp){
+        apps.put(key, newApp);
     }
     
 }

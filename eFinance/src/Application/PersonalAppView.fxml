@@ -21,9 +21,9 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <ScrollPane hbarPolicy="NEVER" layoutX="19.0" layoutY="76.0" pannable="true" prefHeight="286.0" prefWidth="562.0" vbarPolicy="ALWAYS">
+      <ScrollPane hbarPolicy="NEVER" layoutX="19.0" layoutY="76.0" pannable="true" prefHeight="325.0" prefWidth="562.0" vbarPolicy="ALWAYS">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="637.0" prefWidth="560.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="840.0" prefWidth="561.0">
                <children>
                   <Label layoutX="51.0" layoutY="14.0" prefHeight="17.0" prefWidth="183.0" text="What is your name?" />
                   <Label layoutX="51.0" layoutY="66.0" prefHeight="17.0" prefWidth="183.0" text="What is your email?" />
@@ -34,7 +34,7 @@
                   <TextField fx:id="nameTextField" layoutX="51.0" layoutY="31.0" promptText="Joe Shoe" />
                   <TextField fx:id="emailTextField" layoutX="51.0" layoutY="87.0" promptText="johnappleseed@123movies.com" />
                   <DatePicker fx:id="dateOfBirthField" layoutX="53.0" layoutY="243.0" prefHeight="27.0" prefWidth="157.0" promptText="08/15/1999" />
-                  <TextField fx:id="creditScoreTextField" layoutX="52.0" layoutY="305.0" onInputMethodTextChanged="#checkNumberInputs" promptText="730" />
+                  <TextField fx:id="creditScoreTextField" layoutX="52.0" layoutY="305.0" promptText="730" />
                   <TextField fx:id="ssnTextField" layoutX="52.0" layoutY="351.0" promptText="123-45-9012" />
                   <Label layoutX="52.0" layoutY="433.0" prefHeight="17.0" prefWidth="231.0" text="Please Select Your Relationship Status" />
                   <ChoiceBox fx:id="relationshipStatusField" layoutX="52.0" layoutY="450.0" prefWidth="150.0" />

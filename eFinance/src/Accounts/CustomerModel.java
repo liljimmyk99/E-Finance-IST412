@@ -5,6 +5,7 @@
  */
 package Accounts;
 
+import Application.AppModel;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -33,6 +34,7 @@ public class CustomerModel extends AccountsModel {
     private Double averageYearlyIncome;
     private Double totalAssetsValue;
     private String franchiseLocation;
+    private static AppModel loanApplication;
     
     //Map of Available Users
     private static final Map<String, CustomerModel> USERS = new HashMap<String, CustomerModel>();
