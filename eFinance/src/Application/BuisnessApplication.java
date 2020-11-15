@@ -12,13 +12,14 @@ package Application;
 public class BuisnessApplication extends AppModel {
 
     
-    public BuisnessApplication(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
+    public BuisnessApplication(String name, String poc, String email, String phoneNumber, String address, double revenue, String purpose, String amount){
         //Calls AppModel Constructor
-        super(name, address, phoneNumber, ssn, yearlyIncome, creditScore, underGradDegree, currentlyEmployed, married);
+        //super(name, address, phoneNumber, ssn, yearlyIncome, creditScore, underGradDegree, currentlyEmployed, married);
     }
     
     public BuisnessApplication(){}
 
+    @Override
     public String getApplicationType(){
         return "Business";
     }
