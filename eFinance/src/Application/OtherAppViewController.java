@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -99,16 +100,26 @@ public class OtherAppViewController extends AnchorPane implements Initializable 
         //Check that Inputs are not Empty
         if (checkEmptyInputs()){
             System.out.println("Application is Free From Errors");
+        //Create New Application
+            createApplication(nameTextField.getText(), "Some Address", "Some Phone Number", ssnTextField.getText(), Double.parseDouble(incomeField.getText()), Integer.parseInt(creditScoreTextField.getText()), educationStatusField.getValue().toString(), true, false);
+            //Adds Application to the User
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Application Submitted");
+            alert.setHeaderText(null);
+            alert.setContentText("Application Submitted");
+            alert.showAndWait();
+            //user.SubmitApplication()
+            
+            application.showNavigation();
+        } else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Fields Not Completed");
+            alert.setHeaderText(null);
+            alert.setContentText("Please make sure all fields are completed");
+            alert.showAndWait();
         }
         
-        //Check that Inputs are formatted Correctly
         
-        //Create New Application
-        createApplication(nameTextField.getText(), "Some Address", "Some Phone Number", ssnTextField.getText(), Double.parseDouble(incomeField.getText()), Integer.parseInt(creditScoreTextField.getText()), educationStatusField.getValue().toString(), true, false);
-       
-        
-        //Adds Application to the User
-        //user.SubmitApplication()
     }
     
     //Validate User Input
