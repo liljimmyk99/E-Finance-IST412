@@ -18,6 +18,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -50,6 +51,8 @@ public class OtherAppViewController extends AnchorPane implements Initializable 
     @FXML private ChoiceBox educationStatusField;
     @FXML private TextField incomeField;
     @FXML private ChoiceBox approvalField;
+    @FXML private Label typeLabel;
+    @FXML private TextField typeInput;
     
     private Main application;
     
@@ -126,6 +129,7 @@ public class OtherAppViewController extends AnchorPane implements Initializable 
     public boolean checkEmptyInputs(){
         System.out.println("checkEmptyInputs method activated");
         //Print out Field Values
+        System.out.println("Name: |" + typeInput.getText() + "|");
         System.out.println("Name: |" + nameTextField.getText() + "|");
         System.out.println("Email: " + emailTextField.getText());
         System.out.println("Date of Birth: " + dateOfBirthField.getValue());
@@ -138,7 +142,10 @@ public class OtherAppViewController extends AnchorPane implements Initializable 
         System.out.println("Approval: " + approvalField.getValue());
 
 //Ensure Fields are not Empty
-        if (nameTextField.getText().equals("")){
+        if (typeInput.getText().equals("")){
+            System.out.println("typeInput is empty");
+            return false;
+        } else if (nameTextField.getText().equals("")){
             System.out.println("nameTextField is empty");
             return false;
         } else if (emailTextField.getText().equals("")){
