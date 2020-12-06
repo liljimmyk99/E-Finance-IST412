@@ -40,6 +40,7 @@ import Application.ApplicationTypeSelectionViewController;
 import Application.BuisnessAppViewController;
 import Application.OtherAppViewController;
 import Application.PersonalAppViewController;
+import Decision.DecisionController;
 import Login.Authenticator;
 import Login.Authenticator;
 import Login.LoginController;
@@ -125,6 +126,11 @@ public class Main extends Application {
         goToApplicationSelection();
     }
     
+    public void showDecision(){
+        System.out.println("showDecision Method Activated");
+        goToDecision();
+    }
+    
     public void showCustomerNavigation(){
         System.out.println("showCustomerNavigation Method Activated");
         goToCustomerNavigation();
@@ -168,6 +174,18 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    private void goToDecision(){
+        System.out.println("goToDecision Method Activated");
+        try {
+            DecisionController app = (DecisionController) replaceSceneContent("/Decision/DecisionView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
     
     public void goToCustomerNavigation(){
         System.out.println("goToCustomerNavigation Method Activated");

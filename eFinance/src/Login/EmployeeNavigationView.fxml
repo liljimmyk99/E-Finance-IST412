@@ -12,7 +12,7 @@
             <Font size="37.0" />
          </font>
       </Label>
-      <Button fx:id="ApplicationButton" layoutX="47.0" layoutY="173.0" mnemonicParsing="false" onAction="#showApplicationSelection" prefHeight="46.0" prefWidth="192.0" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Approve/Deny Application" />
+      <Button fx:id="ApplicationButton" layoutX="47.0" layoutY="173.0" mnemonicParsing="false" onAction="#showDecisionSelection" prefHeight="46.0" prefWidth="192.0" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Approve/Deny Application" />
       <Button fx:id="useCaseTwoButton" layoutX="361.0" layoutY="173.0" mnemonicParsing="false" onAction="#useCaseTwo" prefHeight="46.0" prefWidth="192.0" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 2" />
       <Button fx:id="logoutButton" layoutX="229.0" layoutY="306.0" mnemonicParsing="false" onAction="#logout" prefHeight="71.0" prefWidth="142.0" styleClass="Button" text="LOG OUT">
          <font>

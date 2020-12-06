@@ -27,10 +27,6 @@ public class EmployeeNavigationController extends AnchorPane implements Initiali
     @FXML
     Button useCaseTwoButton;
     @FXML
-    Button useCaseThreeButton;
-    @FXML
-    Button useCaseFourButton;
-    @FXML
     Button logoutButton;
     
     
@@ -50,19 +46,11 @@ public class EmployeeNavigationController extends AnchorPane implements Initiali
         application.userLogout();
     }
     
-    public void showApplicationSelection(ActionEvent e){
-        application.showApplication();
+    public void showDecisionSelection(ActionEvent e){
+        application.showDecision();
     }
     
     public void useCaseTwo(ActionEvent e){
         //application.useCaseTwo();
-    }
-    
-    public void useCaseThree(ActionEvent e){
-        //application.useCaseThree();
-    }
-    
-    public void useCaseFour(ActionEvent e){
-        //application.useCaseFour();
     }
 }
