@@ -3,33 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Login;
 
+package Payment;
+
+import Accounts.AccountsModel;
+import Application.AppModel;
+import Login.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 
 /**
- * FXML Controller class
  *
- * @author jimmykane
+ * @author Alex Clapper
  */
-public class CustomerNavigationController extends AnchorPane implements Initializable {
+public class PaymentController2 implements Initializable {
 
     private Main application;
     
-    @FXML
-    Button ApplicationButton;
-    @FXML
-    Button PaymentTwoButton;
-    @FXML
-    Button logoutButton;
-    
-    
+    private AppModel userApplication;
+    private AccountsModel currentUser;
     /**
      * Initializes the controller class.
      */
@@ -37,20 +31,17 @@ public class CustomerNavigationController extends AnchorPane implements Initiali
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+        //Gets the Application Object so this class can call the main method functions and get user information
     public void setApp(Main application){
         this.application = application;
-        //Hello
+        currentUser = application.getLoggedUser();
     }
     
+    //Takes the user back to the log in page
     public void logout(ActionEvent e){
         application.userLogout();
     }
     
-    public void showApplicationSelection(ActionEvent e){
-        application.showApplication();
-    }
-    
-    public void showPayment(ActionEvent e){
-        application.showPayment();
-    }
+
 }

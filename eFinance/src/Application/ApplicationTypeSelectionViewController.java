@@ -39,7 +39,7 @@ public class ApplicationTypeSelectionViewController extends AnchorPane implement
     }
     
     public void backToNavigation(ActionEvent e){
-        application.showNavigation();
+        application.showCustomerNavigation();
     }
     
     public void createPersonalLoan(ActionEvent e){

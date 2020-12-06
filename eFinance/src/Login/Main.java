@@ -45,6 +45,8 @@ import Login.Authenticator;
 import Login.Authenticator;
 import Login.LoginController;
 import Login.LoginController;
+import Payment.PaymentController;
+import Payment.PaymentController2;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -131,6 +133,11 @@ public class Main extends Application {
         goToDecision();
     }
     
+    public void showPayment(){
+        System.out.println("showPayment Method Activated");
+        goToPayment();
+    }
+    
     public void showCustomerNavigation(){
         System.out.println("showCustomerNavigation Method Activated");
         goToCustomerNavigation();
@@ -165,6 +172,16 @@ public class Main extends Application {
         }
     }
     
+    public void goToPayment2(String loanID){
+        System.out.println("gotoPayment2 Method Activated");
+        try {
+            PaymentController2 login = (PaymentController2) replaceSceneContent("/Payment/PaymentView2.fxml");
+            login.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void goToApplicationSelection(){
         System.out.println("goToApplicationSelection Method Activated");
         try {
@@ -185,7 +202,15 @@ public class Main extends Application {
         }
     }
     
-    
+    public void goToPayment(){
+        System.out.println("goToPayment Method Activated");
+        try {
+            PaymentController app = (PaymentController) replaceSceneContent("/Payment/PaymentView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     public void goToCustomerNavigation(){
         System.out.println("goToCustomerNavigation Method Activated");
