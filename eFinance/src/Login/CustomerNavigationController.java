@@ -18,7 +18,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author jimmykane
  */
-public class NavigationController extends AnchorPane implements Initializable {
+public class CustomerNavigationController extends AnchorPane implements Initializable {
 
     private Main application;
     
@@ -26,10 +26,6 @@ public class NavigationController extends AnchorPane implements Initializable {
     Button ApplicationButton;
     @FXML
     Button useCaseTwoButton;
-    @FXML
-    Button useCaseThreeButton;
-    @FXML
-    Button useCaseFourButton;
     @FXML
     Button logoutButton;
     
@@ -56,13 +52,5 @@ public class NavigationController extends AnchorPane implements Initializable {
     
     public void useCaseTwo(ActionEvent e){
         //application.useCaseTwo();
-    }
-    
-    public void useCaseThree(ActionEvent e){
-        //application.useCaseThree();
-    }
-    
-    public void useCaseFour(ActionEvent e){
-        //application.useCaseFour();
     }
 }

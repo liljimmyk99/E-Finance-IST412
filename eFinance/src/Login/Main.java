@@ -87,6 +87,7 @@ public class Main extends Application {
     }
 
     public AccountsModel getLoggedUser() {
+        System.out.println("getLoggedUser Method Activated");
         return loggedUser;
     }
         
@@ -95,7 +96,7 @@ public class Main extends Application {
         if (Authenticator.validate(userId, password)) {
             loggedUser = CustomerModel.of(userId);
             //Need a go to somewhere
-            showNavigation();
+            showCustomerNavigation();
             return true;
         } else {
             return false;
@@ -107,7 +108,7 @@ public class Main extends Application {
         if (Authenticator.validate(userId, password)) {
             loggedUser = EmployeeModel.of(userId);
             //Need a go to somewhere
-            showNavigation();
+            showEmployeeNavigation();
             return true;
         } else {
             return false;
@@ -120,25 +121,36 @@ public class Main extends Application {
     }
     
     public void showApplication(){
+        System.out.println("showApplication Method Activated");
         goToApplicationSelection();
     }
     
-    public void showNavigation(){
-        goToNavigation();
+    public void showCustomerNavigation(){
+        System.out.println("showCustomerNavigation Method Activated");
+        goToCustomerNavigation();
+    }
+    
+    public void showEmployeeNavigation(){
+        System.out.println("showEmployeeNavigation Method Activated");
+        goToEmployeeNavigation();
     }
     
     public void showPersonalLoanApplication(){
+        System.out.println("showPersonalLoanApplication Method Activated");
         goToPersonalLoan();
     }
     public void showBuisnessLoanApplication(){
+        System.out.println("showBuisnessLoanApplication Method Activated");
         goToBuisnessLoan();
     }
     public void showOtherLoanApplication(){
+        System.out.println("showOtherLoanApplication Method Activated");
         goToOtherLoan();
     }
     
 
     private void gotoLogin() {
+        System.out.println("gotoLogin Method Activated");
         try {
             LoginController login = (LoginController) replaceSceneContent("login.fxml");
             login.setApp(this);
@@ -148,6 +160,7 @@ public class Main extends Application {
     }
     
     private void goToApplicationSelection(){
+        System.out.println("goToApplicationSelection Method Activated");
         try {
             ApplicationTypeSelectionViewController app = (ApplicationTypeSelectionViewController) replaceSceneContent("/Application/ApplicationTypeSelectionView.fxml");
             app.setApp(this);
@@ -156,9 +169,20 @@ public class Main extends Application {
         }
     }
     
-    public void goToNavigation(){
+    public void goToCustomerNavigation(){
+        System.out.println("goToCustomerNavigation Method Activated");
         try {
-            NavigationController app = (NavigationController) replaceSceneContent("NavigationView.fxml");
+            CustomerNavigationController app = (CustomerNavigationController) replaceSceneContent("CustomerNavigationView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void goToEmployeeNavigation(){
+        System.out.println("goToEmployeeNavigation Method Activated");
+        try {
+            EmployeeNavigationController app = (EmployeeNavigationController) replaceSceneContent("EmployeeNavigationView.fxml");
             app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -166,6 +190,7 @@ public class Main extends Application {
     }
     
     public void goToPersonalLoan(){
+        System.out.println("goToPersonalLoan Method Activated");
         try {
             PersonalAppViewController app = (PersonalAppViewController) replaceSceneContent("/Application/PersonalAppView.fxml");
             app.setApp(this);
@@ -175,6 +200,7 @@ public class Main extends Application {
     }
     
     public void goToBuisnessLoan(){
+        System.out.println("goToBuisnessLoan Method Activated");
         try {
             BuisnessAppViewController app = (BuisnessAppViewController) replaceSceneContent("/Application/BuisnessAppView.fxml");
             app.setApp(this);
@@ -183,6 +209,7 @@ public class Main extends Application {
         }
     }
     public void goToOtherLoan(){
+        System.out.println("goToOtherLoan Method Activated");
         try {
             OtherAppViewController app = (OtherAppViewController) replaceSceneContent("/Application/OtherAppView.fxml");
             app.setApp(this);
