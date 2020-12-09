@@ -67,6 +67,7 @@ Contributor(s):
                               <Font size="42.0" />
                            </font>
                         </Label>
+                        <Label fx:id="inputPrompt" alignment="CENTER" layoutX="96.0" layoutY="65.0" prefHeight="18.0" prefWidth="217.0" text="Please enter credentials below" textAlignment="CENTER" />
               </children>
             </AnchorPane>
                   <CheckBox fx:id="employeeCheckbox" mnemonicParsing="false" text="Employee?" />

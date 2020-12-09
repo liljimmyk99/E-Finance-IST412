@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="Application.OtherAppViewController">
+    <children>
+      <Label layoutX="124.0" layoutY="34.0" text="Welcome to the Personal Loan Application">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="logOutButton" layoutX="501.0" layoutY="33.0" mnemonicParsing="false" onAction="#logout" prefHeight="28.0" prefWidth="80.0" text="Log Out">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ScrollPane hbarPolicy="NEVER" layoutX="19.0" layoutY="76.0" pannable="true" prefHeight="286.0" prefWidth="562.0" vbarPolicy="ALWAYS">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="922.0" prefWidth="562.0">
+               <children>
+                  <Label layoutX="51.0" layoutY="69.0" prefHeight="17.0" prefWidth="183.0" text="What is your name?" />
+                  <Label layoutX="51.0" layoutY="121.0" prefHeight="17.0" prefWidth="183.0" text="What is your email?" />
+                  <Label layoutX="52.0" layoutY="281.0" prefHeight="17.0" prefWidth="183.0" text="What is your date of birth?" />
+                  <Label layoutX="52.0" layoutY="343.0" prefHeight="17.0" prefWidth="183.0" text="What is your credit score?" />
+                  <Label layoutX="52.0" layoutY="389.0" prefHeight="17.0" prefWidth="231.0" text="What is your  Social-Security Number?" />
+                  <Label layoutX="52.0" layoutY="434.0" prefHeight="17.0" prefWidth="231.0" text="Please select your gender?" />
+                  <TextField fx:id="nameTextField" layoutX="51.0" layoutY="86.0" promptText="Joe Shoe" />
+                  <TextField fx:id="emailTextField" layoutX="51.0" layoutY="142.0" promptText="johnappleseed@123movies.com" />
+                  <DatePicker fx:id="dateOfBirthField" layoutX="53.0" layoutY="298.0" prefHeight="27.0" prefWidth="157.0" promptText="08/15/1999" />
+                  <TextField fx:id="creditScoreTextField" layoutX="52.0" layoutY="360.0" promptText="730" />
+                  <TextField fx:id="ssnTextField" layoutX="52.0" layoutY="406.0" promptText="123-45-9012" />
+                  <Label layoutX="52.0" layoutY="488.0" prefHeight="17.0" prefWidth="231.0" text="Please Select Your Relationship Status" />
+                  <ChoiceBox fx:id="relationshipStatusField" layoutX="52.0" layoutY="505.0" prefWidth="150.0" />
+                  <Label layoutX="53.0" layoutY="539.0" prefHeight="17.0" prefWidth="231.0" text="Please Select Education Level" />
+                  <ChoiceBox fx:id="educationStatusField" layoutX="52.0" layoutY="556.0" prefWidth="150.0" />
+                  <TextField fx:id="incomeField" layoutX="51.0" layoutY="608.0" promptText="17800.78" />
+                  <Label layoutX="52.0" layoutY="591.0" prefHeight="17.0" prefWidth="231.0" text="What is your yearly income?" />
+                  <Button fx:id="submitButton" layoutX="86.0" layoutY="661.0" mnemonicParsing="false" onAction="#SubmitApplication" prefHeight="27.0" prefWidth="94.0" text="Submit" />
+                  <Label layoutX="51.0" layoutY="591.0" prefHeight="37.0" prefWidth="219.0" text="I affirm the information above is true" />
+                  <ChoiceBox fx:id="genderSelectionField" layoutX="52.0" layoutY="451.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="approvalField" layoutX="52.0" layoutY="621.0" prefWidth="150.0" />
+                  <Label layoutX="54.0" layoutY="176.0" text="What is your Phone Number?" />
+                  <TextField fx:id="phoneNumberField" layoutX="53.0" layoutY="193.0" promptText="123-456-7890" />
+                  <Label layoutX="53.0" layoutY="231.0" text="What is your address" />
+                  <TextField fx:id="addressField" layoutX="52.0" layoutY="248.0" prefHeight="27.0" prefWidth="244.0" promptText="123 some street, east bumble f, PA, 19020" />
+                  <Label fx:id="typeLabel" layoutX="55.0" layoutY="22.0" text="What type of Loan is This?" />
+                  <TextField fx:id="typeInput" layoutX="50.0" layoutY="44.0" promptText="Personal" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Button fx:id="backButton" layoutX="19.0" layoutY="33.0" mnemonicParsing="false" onAction="#backToNavigation" prefHeight="27.0" prefWidth="80.0" text="Back" />
+   </children>
+</AnchorPane>

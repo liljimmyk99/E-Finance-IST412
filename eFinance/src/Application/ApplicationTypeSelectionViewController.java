@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Login;
+package Application;
 
+import Login.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,51 +19,38 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author jimmykane
  */
-public class NavigationController extends AnchorPane implements Initializable {
+public class ApplicationTypeSelectionViewController extends AnchorPane implements Initializable {
 
+    @FXML private Button personalButton;
+    @FXML private Button buisnessButton;
+    @FXML private Button otherButton;
+    @FXML private Button backButton;
     private Main application;
-    
-    @FXML
-    Button useCaseOneButton;
-    @FXML
-    Button useCaseTwoButton;
-    @FXML
-    Button useCaseThreeButton;
-    @FXML
-    Button useCaseFourButton;
-    @FXML
-    Button logoutButton;
-    
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    
     public void setApp(Main application){
         this.application = application;
-        //Hello
     }
     
-    public void logout(ActionEvent e){
-        application.userLogout();
+    public void backToNavigation(ActionEvent e){
+        application.showCustomerNavigation();
     }
     
-    public void useCaseOne(ActionEvent e){
-        //application.useCaseOne();
+    public void createPersonalLoan(ActionEvent e){
+        application.showPersonalLoanApplication();
+    }
+    public void createBuisnessLoan(ActionEvent e){
+        application.showBuisnessLoanApplication();
+    }
+    public void createOtherLoan(ActionEvent e){
+        application.showOtherLoanApplication();
     }
     
-    public void useCaseTwo(ActionEvent e){
-        //application.useCaseTwo();
-    }
     
-    public void useCaseThree(ActionEvent e){
-        //application.useCaseThree();
-    }
-    
-    public void useCaseFour(ActionEvent e){
-        //application.useCaseFour();
-    }
 }

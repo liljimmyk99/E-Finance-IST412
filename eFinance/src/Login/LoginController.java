@@ -60,6 +60,8 @@ public class LoginController extends AnchorPane implements Initializable {
     @FXML
     CheckBox employeeCheckbox;
     
+    @FXML
+    private Label inputPrompt;//Joeg input prompt
 
 
     private Main application;
@@ -89,9 +91,17 @@ public class LoginController extends AnchorPane implements Initializable {
             // NO-OP.
             errorMessage.setText("Hello " + userId.getText());
         } else {
-            if (!application.userLogging(userId.getText(), password.getText())){
+            if (employeeCheckbox.selectedProperty().get()){
+                if (!application.employeeLogging(userId.getText(), password.getText())){
+                    errorMessage.setText("Username/Password is incorrect");
+                }   
+            } else{
+                if (!application.customerLogging(userId.getText(), password.getText())){
                 errorMessage.setText("Username/Password is incorrect");
             }
+            }
+                
+            
         }
     }
 }
