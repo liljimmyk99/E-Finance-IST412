@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: Cyan;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.CustomerNavigationController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: Cyan;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.CustomerNavigationController">
    <children>
       <Label layoutX="124.0" layoutY="29.0" text="Welcome to E-Finance">
          <font>
@@ -13,7 +13,7 @@
          </font>
       </Label>
       <Button fx:id="ApplicationButton" layoutX="124.0" layoutY="173.0" mnemonicParsing="false" onAction="#showApplicationSelection" prefHeight="46.0" prefWidth="152.0" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Create Application" />
-      <Button fx:id="useCaseTwoButton" layoutX="324.0" layoutY="173.0" mnemonicParsing="false" onAction="#useCaseTwo" prefHeight="46.0" prefWidth="152.0" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Use Case 2" />
+      <Button fx:id="PaymentButton" layoutX="324.0" layoutY="173.0" mnemonicParsing="false" onAction="#showPayment" prefHeight="46.0" prefWidth="152.0" style="-fx-background-color: Green; -fx-border-color: Red; -fx-text-fill: Yellow;" styleClass="Button" text="Make Payment" />
       <Button fx:id="logoutButton" layoutX="229.0" layoutY="306.0" mnemonicParsing="false" onAction="#logout" prefHeight="71.0" prefWidth="142.0" styleClass="Button" text="LOG OUT">
          <font>
             <Font size="24.0" />

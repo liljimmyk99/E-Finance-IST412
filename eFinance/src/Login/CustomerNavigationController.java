@@ -25,7 +25,7 @@ public class CustomerNavigationController extends AnchorPane implements Initiali
     @FXML
     Button ApplicationButton;
     @FXML
-    Button useCaseTwoButton;
+    Button PaymentTwoButton;
     @FXML
     Button logoutButton;
     
@@ -50,7 +50,7 @@ public class CustomerNavigationController extends AnchorPane implements Initiali
         application.showApplication();
     }
     
-    public void useCaseTwo(ActionEvent e){
-        //application.useCaseTwo();
+    public void showPayment(ActionEvent e){
+        application.showPayment();
     }
 }
