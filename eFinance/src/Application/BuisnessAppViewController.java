@@ -93,7 +93,7 @@ public class BuisnessAppViewController extends AnchorPane implements Initializab
     }
     
     public void backToNavigation(ActionEvent e){
-        application.showNavigation();
+        application.showCustomerNavigation();
     }    
     
     public void createApplication(String name, String poc, String email, String phoneNumber, String address, double revenue, String purpose, String amount){
@@ -124,7 +124,7 @@ public class BuisnessAppViewController extends AnchorPane implements Initializab
             alert.showAndWait();
             //user.SubmitApplication()
             
-            application.showNavigation();
+            application.showCustomerNavigation();
         } else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fields Not Completed");

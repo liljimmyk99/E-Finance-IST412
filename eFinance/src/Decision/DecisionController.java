@@ -11,19 +11,28 @@ import Login.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
  *
  * @author jimmykane
  */
-public class DecisionController implements Initializable {
+public class DecisionController extends AnchorPane implements Initializable {
 
     private Main application;
     
     private AppModel userApplication;
     private AccountsModel currentUser;
+    @FXML
+    Button logoutButton;
+    
+    @FXML
+    Button homeButton;
+    
     /**
      * Initializes the controller class.
      */
@@ -41,6 +50,10 @@ public class DecisionController implements Initializable {
     //Takes the user back to the log in page
     public void logout(ActionEvent e){
         application.userLogout();
+    }
+    
+    public void goHome(ActionEvent e){
+        application.showEmployeeNavigation();
     }
     
     public void approveApplication(ActionEvent e){

@@ -83,7 +83,7 @@ public class OtherAppViewController extends AnchorPane implements Initializable 
     }
     
     public void backToNavigation(ActionEvent e){
-        application.showNavigation();
+        application.showCustomerNavigation();
     }
     
     public void createApplication(String name, String address, String phoneNumber, String ssn, double yearlyIncome, Integer creditScore, String underGradDegree, boolean currentlyEmployed, boolean married){
@@ -113,7 +113,7 @@ public class OtherAppViewController extends AnchorPane implements Initializable 
             alert.showAndWait();
             //user.SubmitApplication()
             
-            application.showNavigation();
+            application.showCustomerNavigation();
         } else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Fields Not Completed");
