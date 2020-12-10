@@ -31,6 +31,7 @@
  */
 package Login;
 
+import Accounts.AccountsController;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
@@ -161,6 +162,11 @@ public class Main extends Application {
         goToOtherLoan();
     }
     
+    public void showAccountManagement(){
+        System.out.println("showAccountManagement Method Activated");
+        goToAccountManagement();
+    }
+    
 
     private void gotoLogin() {
         System.out.println("gotoLogin Method Activated");
@@ -255,6 +261,16 @@ public class Main extends Application {
         System.out.println("goToOtherLoan Method Activated");
         try {
             OtherAppViewController app = (OtherAppViewController) replaceSceneContent("/Application/OtherAppView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void goToAccountManagement(){
+        System.out.println("goToAccountManagement Method Activated");
+        try {
+            AccountsController app = (AccountsController) replaceSceneContent("/Accounts/AccountView.fxml");
             app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

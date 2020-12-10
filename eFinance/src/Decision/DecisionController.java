@@ -43,6 +43,10 @@ public class DecisionController implements Initializable {
         application.userLogout();
     }
     
+    public void goBack(ActionEvent e){
+        application.goToEmployeeNavigation();
+    }
+    
     public void approveApplication(ActionEvent e){
         userApplication.setApprovedApplication(true);
     }

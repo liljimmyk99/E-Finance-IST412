@@ -25,7 +25,7 @@ public class CustomerNavigationController extends AnchorPane implements Initiali
     @FXML
     Button ApplicationButton;
     @FXML
-    Button PaymentTwoButton;
+    Button PaymentButton;
     @FXML
     Button logoutButton;
     

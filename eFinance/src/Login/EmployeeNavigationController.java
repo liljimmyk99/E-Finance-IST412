@@ -25,7 +25,7 @@ public class EmployeeNavigationController extends AnchorPane implements Initiali
     @FXML
     Button ApplicationButton;
     @FXML
-    Button useCaseTwoButton;
+    Button ManageAccountButton;
     @FXML
     Button logoutButton;
     
@@ -50,7 +50,7 @@ public class EmployeeNavigationController extends AnchorPane implements Initiali
         application.showDecision();
     }
     
-    public void useCaseTwo(ActionEvent e){
-        //application.useCaseTwo();
+    public void showAccountSelection(ActionEvent e){
+        application.showAccountManagement();
     }
 }

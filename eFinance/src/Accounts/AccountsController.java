@@ -40,6 +40,10 @@ public class AccountsController implements Initializable {
     public void logout(ActionEvent e){
         application.userLogout();
     }
+    
+    public void goBack(ActionEvent e){
+        application.goToEmployeeNavigation();
+    }
 
     public void createCustomerAccount(String id, String email){
         if(CustomerModel.getUsers().containsKey(id)){

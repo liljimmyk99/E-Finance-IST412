@@ -6,6 +6,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="Decision.DecisionViewController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="Decision.DecisionController">
+   <children>
+      <Button fx:id="backButton" layoutX="126.0" layoutY="212.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="181.0" text="Back" />
+      <Button fx:id="logoutButton" layoutX="331.0" layoutY="212.0" mnemonicParsing="false" onAction="#logout" prefHeight="27.0" prefWidth="181.0" text="Log Out" />
+      <Label layoutX="269.0" layoutY="48.0" text="Account View" />
+   </children>
 </AnchorPane>
