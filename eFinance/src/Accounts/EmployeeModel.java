@@ -44,6 +44,12 @@ public class EmployeeModel extends AccountsModel {
         return user;
     }
     
+    public static void addUser(String userID){
+        System.out.println("Creating New Employee User with ID of: " + userID);
+        EmployeeModel newUser = new EmployeeModel(userID);
+        USERS.put(userID, newUser);
+    }
+    
     /*
     *
     * Constructors

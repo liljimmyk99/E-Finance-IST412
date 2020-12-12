@@ -89,6 +89,18 @@ public class Main extends Application {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void createCustomerAccount(String userID, String password){
+        System.out.println("createCustomerAccount function activated");
+        CustomerModel.addUser(userID);
+        Authenticator.addUser(userID, password);
+    }
+    
+    public void createEmployeeAccount(String userID, String password){
+        System.out.println("createEmployeeAccount function activated");
+        EmployeeModel.addUser(userID);
+        Authenticator.addUser(userID, password);
+    }
 
     public AccountsModel getLoggedUser() {
         System.out.println("getLoggedUser Method Activated");

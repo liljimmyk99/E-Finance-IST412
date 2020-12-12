@@ -49,6 +49,12 @@ public class CustomerModel extends AccountsModel {
         return user;
     }
     
+    public static void addUser(String userID){
+        System.out.println("Creating New Customer User with ID of: " + userID);
+        CustomerModel newUser = new CustomerModel(userID);
+        USERS.put(userID, newUser);
+    }
+    
     /*
     *
     * To String

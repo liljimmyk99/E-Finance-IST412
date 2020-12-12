@@ -43,4 +43,9 @@ public class Authenticator {
         String validUserPassword = USERS.get(user);
         return validUserPassword != null && validUserPassword.equals(password);
     }
+    
+    public static void addUser(String userID, String password){
+        System.out.println("Adding user: " + userID + " with password: " + password);
+        USERS.put(userID, password);
+    }
 }
