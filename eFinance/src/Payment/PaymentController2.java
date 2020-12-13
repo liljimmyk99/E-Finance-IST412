@@ -71,6 +71,14 @@ public class PaymentController2 implements Initializable {
     private Button homeButton;
     
     @FXML
+    private Button backButton;
+
+    @FXML
+    void clickedBack(ActionEvent event) {
+        application.showPayment();
+    }
+    
+    @FXML
     void clickedHome(ActionEvent event) {
         application.goToCustomerNavigation();
     }

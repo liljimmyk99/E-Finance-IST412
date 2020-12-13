@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -27,5 +28,10 @@
             <Font name="System Font" size="23.0" />
          </font>
       </RadioButton>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="351.0" mnemonicParsing="false" onAction="#clickedBack" prefHeight="34.0" prefWidth="78.0" text="Back">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
