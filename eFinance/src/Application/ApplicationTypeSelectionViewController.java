@@ -25,6 +25,12 @@ public class ApplicationTypeSelectionViewController extends AnchorPane implement
     @FXML private Button buisnessButton;
     @FXML private Button otherButton;
     @FXML private Button backButton;
+   
+
+    @FXML
+    void clickedBack(ActionEvent event) {
+        application.showCustomerNavigation();
+    }
     private Main application;
     /**
      * Initializes the controller class.
