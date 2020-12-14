@@ -37,6 +37,7 @@ public class DecisionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         applicationComboBox.setItems(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()));
+        applicationComboBox.setValue(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()).get(0));
     }    
     
         //Gets the Application Object so this class can call the main method functions and get user information
@@ -62,7 +63,7 @@ public class DecisionController implements Initializable {
         alert.setContentText("Application Approved");
         alert.showAndWait();
         applicationComboBox.setItems(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()));
-        applicationComboBox.setValue(null);
+        applicationComboBox.setValue(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()).get(0));
     }
     
     public void denyApplication(ActionEvent e){
@@ -73,7 +74,7 @@ public class DecisionController implements Initializable {
         alert.setContentText("Application Denied");
         alert.showAndWait();
         applicationComboBox.setItems(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()));
-        applicationComboBox.setValue(null);
+        applicationComboBox.setValue(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()).get(0));
     }
     
     public void setApplication(AppModel userApplication){
