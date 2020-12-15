@@ -12,9 +12,11 @@ import Login.Main;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -71,6 +73,14 @@ public class PaymentController2 implements Initializable {
     private Button homeButton;
     
     @FXML
+    private Button backButton;
+
+    @FXML
+    void clickedBack(ActionEvent event) {
+        application.showPayment();
+    }
+    
+    @FXML
     void clickedHome(ActionEvent event) {
         application.goToCustomerNavigation();
     }
@@ -82,8 +92,12 @@ public class PaymentController2 implements Initializable {
             fillOutLabel.setVisible (true);
         }
         else{
-            successLabel.setVisible(true);
-            homeButton.setVisible(true);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Payment Successful");
+            alert.setHeaderText(null);
+            alert.setContentText("Payment Successful");
+            alert.showAndWait();
+            application.showCustomerNavigation();
         }
     }
     

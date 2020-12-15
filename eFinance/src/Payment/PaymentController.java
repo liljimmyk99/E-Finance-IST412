@@ -29,6 +29,14 @@ public class PaymentController implements Initializable {
     @FXML
     Button selectButton;
     
+    @FXML
+    private Button backButton;
+
+    @FXML
+    void clcikedBack(ActionEvent event) {
+        application.showCustomerNavigation();
+    }
+    
     private Main application;
     private static Records.RecordsModel records;
     private List<String> loans;

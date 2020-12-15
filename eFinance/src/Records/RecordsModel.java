@@ -25,7 +25,17 @@ public class RecordsModel {
         loanList.add(new Records.Loan("L00001", "demo", 50000, 40000, 500, LocalDate.now()));
         loanList.add(new Records.Loan("L00002","demo", 60000, 500, 500, LocalDate.of(2020, 12, 12)));
         loans.add("L00001");
-        loans.add("L00001");
+        loans.add("L00002");
+    }
+    private static ArrayList<String> applications =  new ArrayList<String>();
+    static{
+        applications.add("A00001");
+        applications.add("A00002");
+        applications.add("A00003");
+        applications.add("A00004");
+        applications.add("A00005");
+        applications.add("A00006");
+        
     }
     private static Map<String, String> paymentHistory = new HashMap<String, String>();
     
@@ -62,10 +72,17 @@ public class RecordsModel {
         this.paymentHistory = paymentHistory;
     }
     
-    public void addApplication(String key, AppModel newApp){
-        apps.put(key, newApp);
+    public void addApplication(String app){
+        applications.add(app);
     }
     
+    public void deleteApplication(String app){
+        applications.remove(app);
+    }
+    
+    public ArrayList<String> getApplications(){
+        return applications;
+    }
 //    public void addLoan(Loan newLoan){
 //        loans.add(newLoan);
 //    }

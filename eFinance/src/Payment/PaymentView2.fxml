@@ -27,5 +27,6 @@
       <Label fx:id="fillOutLabel" layoutX="218.0" layoutY="225.0" text="Please fill out all sections!" />
       <Label fx:id="successLabel" layoutX="233.0" layoutY="270.0" text="Payment successful!" />
       <Button fx:id="homeButton" layoutX="260.0" layoutY="295.0" mnemonicParsing="false" onAction="#clickedHome" text="Home" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onAction="#clickedBack" prefHeight="35.0" prefWidth="68.0" text="Back" />
    </children>
 </AnchorPane>

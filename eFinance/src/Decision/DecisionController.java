@@ -10,8 +10,12 @@ import Application.AppModel;
 import Login.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 
 /**
  * FXML Controller class
@@ -22,6 +26,9 @@ public class DecisionController implements Initializable {
 
     private Main application;
     
+    @FXML
+    private ComboBox applicationComboBox;
+    
     private AppModel userApplication;
     private AccountsModel currentUser;
     /**
@@ -29,7 +36,8 @@ public class DecisionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        applicationComboBox.setItems(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()));
+        applicationComboBox.setValue(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()).get(0));
     }    
     
         //Gets the Application Object so this class can call the main method functions and get user information
@@ -43,12 +51,30 @@ public class DecisionController implements Initializable {
         application.userLogout();
     }
     
+    public void goBack(ActionEvent e){
+        application.goToEmployeeNavigation();
+    }
+    
     public void approveApplication(ActionEvent e){
-        userApplication.setApprovedApplication(true);
+        Records.RecordsModel.getRecordsModel().deleteApplication(applicationComboBox.getValue().toString());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Application Approved");
+        alert.setHeaderText(null);
+        alert.setContentText("Application Approved");
+        alert.showAndWait();
+        applicationComboBox.setItems(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()));
+        applicationComboBox.setValue(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()).get(0));
     }
     
     public void denyApplication(ActionEvent e){
-        userApplication.setApprovedApplication(false);
+        Records.RecordsModel.getRecordsModel().deleteApplication(applicationComboBox.getValue().toString());
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Application Denied");
+        alert.setHeaderText(null);
+        alert.setContentText("Application Denied");
+        alert.showAndWait();
+        applicationComboBox.setItems(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()));
+        applicationComboBox.setValue(FXCollections.observableArrayList(Records.RecordsModel.getRecordsModel().getApplications()).get(0));
     }
     
     public void setApplication(AppModel userApplication){

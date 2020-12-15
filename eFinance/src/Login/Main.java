@@ -31,6 +31,7 @@
  */
 package Login;
 
+import Accounts.AccountsController;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
 import Accounts.AccountsModel;
@@ -87,6 +88,18 @@ public class Main extends Application {
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public void createCustomerAccount(String userID, String password){
+        System.out.println("createCustomerAccount function activated");
+        CustomerModel.addUser(userID);
+        Authenticator.addUser(userID, password);
+    }
+    
+    public void createEmployeeAccount(String userID, String password){
+        System.out.println("createEmployeeAccount function activated");
+        EmployeeModel.addUser(userID);
+        Authenticator.addUser(userID, password);
     }
 
     public AccountsModel getLoggedUser() {
@@ -159,6 +172,11 @@ public class Main extends Application {
     public void showOtherLoanApplication(){
         System.out.println("showOtherLoanApplication Method Activated");
         goToOtherLoan();
+    }
+    
+    public void showAccountManagement(){
+        System.out.println("showAccountManagement Method Activated");
+        goToAccountManagement();
     }
     
 
@@ -255,6 +273,16 @@ public class Main extends Application {
         System.out.println("goToOtherLoan Method Activated");
         try {
             OtherAppViewController app = (OtherAppViewController) replaceSceneContent("/Application/OtherAppView.fxml");
+            app.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void goToAccountManagement(){
+        System.out.println("goToAccountManagement Method Activated");
+        try {
+            AccountsController app = (AccountsController) replaceSceneContent("/Accounts/AccountView.fxml");
             app.setApp(this);
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
